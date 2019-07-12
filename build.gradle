@@ -30,9 +30,6 @@ dependencies {
     // https://mvnrepository.com/artifact/org.xhtmlrenderer/flying-saucer-core
     compile group: 'org.xhtmlrenderer', name: 'flying-saucer-core', version: '9.1.18'
 
-    // https://mvnrepository.com/artifact/io.humble/humble-video-all
-    compile group: 'io.humble', name: 'humble-video-all', version: '0.3.0'
-
     // https://mvnrepository.com/artifact/commons-cli/commons-cli
     compile group: 'commons-cli', name: 'commons-cli', version: '1.4'
 
