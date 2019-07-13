@@ -6,7 +6,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.parser.Parser;
 
 import java.io.*;
-import java.util.Date;
 
 public class XhtmlParser {
     int count = 0;

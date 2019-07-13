@@ -11,17 +11,34 @@ import java.util.Map;
 
 public class XhtmlToImage {
 
-    static Map<String, Integer> images = new HashMap<>();
+    static Map<String, Integer> images;
     private String imagePath = null;
     private int duration = 1;
+
 
     public void setDuration(int duration) {
         this.duration = duration;
     }
 
-
     public Map<String, Integer> getImages() {
         return images;
+    }
+
+    public XhtmlToImage(){
+        File imgPath = new File(Main.videoOutput + "/images");
+        if (!imgPath.exists()){
+            if (imgPath.mkdir()){
+                imagePath = null;
+                System.out.println("Создана директория для сохранения снимков xhtml-страницы");
+            } else {
+                System.out.println("Не удалось создать директорию для сохранения снимков xhtml-страницы");
+            }
+        } else {
+            System.out.println("Директория для сохранения снимков xhtml-страницы уже существует");
+            imagePath = null;
+        }
+        images = new HashMap<>();
+
     }
 
     public void convertAndSave(String url, int count) throws IOException {

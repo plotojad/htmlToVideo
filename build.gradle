@@ -24,15 +24,7 @@ dependencies {
     // jsoup HTML parser library @ https://jsoup.org/
     compile 'org.jsoup:jsoup:1.12.1'
 
-    // https://mvnrepository.com/artifact/com.github.xuwei-k/html2image
-    compile group: 'com.github.xuwei-k', name: 'html2image', version: '0.1.0'
-
     // https://mvnrepository.com/artifact/org.xhtmlrenderer/flying-saucer-core
     compile group: 'org.xhtmlrenderer', name: 'flying-saucer-core', version: '9.1.18'
-
-    // https://mvnrepository.com/artifact/commons-cli/commons-cli
-    compile group: 'commons-cli', name: 'commons-cli', version: '1.4'
-
-
 
 }
