@@ -29,7 +29,7 @@ public class ImageToVideo {
 
         {
             try {
-                process = Runtime.getRuntime().exec("ffmpeg -f concat -safe 0 -i /home/plotoSUSE/input.txt -i " +
+                process = Runtime.getRuntime().exec("ffmpeg -f concat -safe 0 -i " + Main.videoOutput + "/images/input.txt -i " +
                         mp3Path + " -codec:a copy " +
                         "-vcodec mpeg2video -pix_fmt yuv420p -vf fps=1 " + videoPath + "/OUTPUT.mp4");
             } catch (IOException e) {

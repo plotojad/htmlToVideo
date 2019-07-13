@@ -22,12 +22,19 @@ public class InputFileForITV {
 
     public void makeFile() {
 
-        for (Map.Entry<String, Integer> entry : images.entrySet()){
+        for (Map.Entry<String, Integer> entry : images.entrySet()) {
             try {
-                fw.write("file '" + entry.getKey() + "'\n"+ "duration " + entry.getValue().toString() + "\n");
+                fw.write("file \'" + entry.getKey() + "\'\n" + "duration " + entry.getValue().toString() + "\n");
+                System.out.println(entry.getKey() + " : " + entry.getValue());
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+        try {
+            fw.flush();
+            fw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

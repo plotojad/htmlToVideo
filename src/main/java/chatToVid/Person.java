@@ -7,7 +7,7 @@ public class Person {
     boolean status = false;
     boolean talk = false;
 
-    XhtmlParser xhtmlParser = new XhtmlParser();
+    XhtmlParser xhtmlParser;
 
     public String getName() {
         return name;
@@ -45,6 +45,7 @@ public class Person {
     public Person(String name, boolean status) {
         this.name = name;
         this.status = status;
+        xhtmlParser = new XhtmlParser();
     }
 
     public Person(String name, boolean status, boolean talk) {

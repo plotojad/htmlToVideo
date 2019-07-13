@@ -6,7 +6,7 @@ import org.xhtmlrenderer.util.FSImageWriter;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class XhtmlToImage {
@@ -24,10 +24,10 @@ public class XhtmlToImage {
         return images;
     }
 
-    public XhtmlToImage(){
+    public XhtmlToImage() {
         File imgPath = new File(Main.videoOutput + "/images");
-        if (!imgPath.exists()){
-            if (imgPath.mkdir()){
+        if (!imgPath.exists()) {
+            if (imgPath.mkdir()) {
                 imagePath = null;
                 System.out.println("Создана директория для сохранения снимков xhtml-страницы");
             } else {
@@ -37,7 +37,7 @@ public class XhtmlToImage {
             System.out.println("Директория для сохранения снимков xhtml-страницы уже существует");
             imagePath = null;
         }
-        images = new HashMap<>();
+        images = new LinkedHashMap<>();
 
     }
 
@@ -45,7 +45,6 @@ public class XhtmlToImage {
 
         imagePath = String.format("%s/images/chat%04d.png", Main.videoOutput, count);
 
-        System.out.println("Start save");
         int width = 1280;
         int height = 720;
         File file = new File(url);
@@ -53,7 +52,6 @@ public class XhtmlToImage {
         BufferedImage bufferedImage = renderer.getImage();
         FSImageWriter imageWriter = new FSImageWriter();
         imageWriter.write(bufferedImage, imagePath);
-        System.out.println("Saved");
 
         images.put(imagePath, duration);
 

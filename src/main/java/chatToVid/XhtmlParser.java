@@ -8,14 +8,22 @@ import org.jsoup.parser.Parser;
 import java.io.*;
 
 public class XhtmlParser {
+    XhtmlToImage xhtmlToImage;
     int count = 0;
-    long time;
+    static long time;
 
-    public void setStatusParser(boolean online, long date) throws IOException {
-        time = date - time;
+    public XhtmlParser() {
+        xhtmlToImage = new XhtmlToImage();
+    }
+
+    public void setStatusParser(boolean online, long currentTime) throws IOException {
+        if (count == 0) {
+            time = currentTime;
+        } else {
+
+        }
 
 
-        XhtmlToImage xhtmlToImage = new XhtmlToImage();
         Document xhtmlFile = null;
         xhtmlToImage.setDuration((int) time);
 

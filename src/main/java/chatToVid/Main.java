@@ -11,7 +11,6 @@ public class Main {
         ImageToVideo imageToVideo;
         String mp3Path = null;
 
-        Person mitya = new Person("Mitya", false);
 
         Scanner scannerOfPath = new Scanner(System.in);
         System.out.println("Введи путь к файлу mp3");
@@ -22,13 +21,14 @@ public class Main {
 
 
         int orline = 0;
+        Person mitya = new Person("Mitya", false);
         mitya.setStatus(false);
         System.out.println("Привет! Тебя зовут Митя и ты находишься в чате\n" +
                 "Сейчас ты не в сети - Offline :(\n" +
-                "Чтобы стать Online нажми 1, Offline - 2.\n" +
+                "Чтобы стать Online нажми 1, Offline - 0.\n" +
                 "Чтобы выйти - нажми 5\n");
 
-        while (orline!=5) {
+        while (orline != 5) {
 
             orline = scannerOfPath.nextInt();
 
