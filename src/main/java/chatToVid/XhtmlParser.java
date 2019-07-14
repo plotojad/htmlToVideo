@@ -11,6 +11,7 @@ public class XhtmlParser {
     XhtmlToImage xhtmlToImage;
     int count = 0;
     static long time;
+    long bufferTime;
 
     public XhtmlParser() {
         xhtmlToImage = new XhtmlToImage();
@@ -18,9 +19,11 @@ public class XhtmlParser {
 
     public void setStatusParser(boolean online, long currentTime) throws IOException {
         if (count == 0) {
-            time = currentTime;
+            time = 0;
+            bufferTime = currentTime;
         } else {
-
+            time = (currentTime - bufferTime) / 1000;
+            bufferTime = currentTime;
         }
 
 
